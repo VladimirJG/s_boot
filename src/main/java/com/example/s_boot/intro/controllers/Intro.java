@@ -7,17 +7,17 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/in")
 public class Intro {
 
-    @RequestMapping(method = RequestMethod.GET)
+    @GetMapping
     public String index() {
         return "index";
     }
 
-    @RequestMapping(value = "/about", method = RequestMethod.GET)
+    @GetMapping(value = "/about")
     public String about() {
         return "about";
     }
 
-    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    @GetMapping(value = "/users")
     public String users() {
         return "users";
     }
@@ -30,9 +30,8 @@ public class Intro {
         return String.format("user name = %s  id = %s", name, id);
     }*/
 
-    @RequestMapping(value = "/user",
-            params = {"id", "name"},
-            method = RequestMethod.GET)
+    @GetMapping(value = {"/user", "/student"},
+            params = {"id", "name"})
     @ResponseBody
     public String userById(@RequestParam long id, @RequestParam String name) {
 
