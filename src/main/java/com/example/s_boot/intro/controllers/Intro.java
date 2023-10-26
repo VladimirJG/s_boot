@@ -27,8 +27,9 @@ public class Intro {
 
     @RequestMapping(value = "/user/{id}/name/{name}", method = RequestMethod.GET)
     @ResponseBody
-    public String userById(@PathVariable("id") long id,
-                           @PathVariable("name") String name) {
-        return "user id = " + id + "user Name = " + name;
+    public String userById(@PathVariable long id,
+                           @PathVariable String name) {
+        /*return "user id = " + id + "user Name = " + name;*/
+        return String.format("user name = %s  id = %s", name, id);
     }
 }
