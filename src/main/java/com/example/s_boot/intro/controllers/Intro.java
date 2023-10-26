@@ -10,13 +10,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class Intro {
 
     @RequestMapping(method = RequestMethod.GET)
-    public String intoGet() {
-        return "intro";
+    public String index() {
+        return "index";
     }
 
-    @ResponseBody
-    @RequestMapping(value = "/name", method = RequestMethod.GET)
-    public String getMyName() {
-        return "Vladimir";
+    @RequestMapping(value = "/about", method = RequestMethod.GET)
+    public String about() {
+        return "about";
+    }
+
+    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    public String users() {
+        return "users";
     }
 }
