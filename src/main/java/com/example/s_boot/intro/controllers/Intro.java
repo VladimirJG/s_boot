@@ -1,6 +1,7 @@
 package com.example.s_boot.intro.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -22,5 +23,12 @@ public class Intro {
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public String users() {
         return "users";
+    }
+
+    @RequestMapping(value = "/user/{id}/name/{name}", method = RequestMethod.GET)
+    @ResponseBody
+    public String userById(@PathVariable("id") long id,
+                           @PathVariable("name") String name) {
+        return "user id = " + id + "user Name = " + name;
     }
 }
