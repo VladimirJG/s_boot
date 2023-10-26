@@ -20,8 +20,11 @@ public class MemberHandler {
     }
 
     @PostMapping("new_member/create")
-    public String createMember(@RequestParam String firstName, @RequestParam String lastName) {
+    public String createMember(@RequestParam String firstName, @RequestParam String lastName, Model model) {
         System.out.printf("First name: %s; Last name: %s \n", firstName, lastName);
-        return "redirect:/members";
+        model.addAttribute("firstName", firstName);
+        model.addAttribute("lastName", lastName);
+        //return "redirect:/members";
+        return "members/members";
     }
 }
