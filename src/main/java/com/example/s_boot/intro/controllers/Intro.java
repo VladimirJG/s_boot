@@ -30,11 +30,13 @@ public class Intro {
         return String.format("user name = %s  id = %s", name, id);
     }*/
 
-    @RequestMapping(value = "/user", method = RequestMethod.GET)
-     @ResponseBody
-     public String userById(@RequestParam long id) {
+    @RequestMapping(value = "/user",
+            params = {"id", "name"},
+            method = RequestMethod.GET)
+    @ResponseBody
+    public String userById(@RequestParam long id, @RequestParam String name) {
 
-        return String.format("user id = %s", id);
+        return String.format("user id = %s user name = %s", id, name);
     }
 
 
