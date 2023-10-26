@@ -5,21 +5,21 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/in")
-public class Intro {
+public class IntroHandler {
 
     @GetMapping
     public String index() {
-        return "index";
+        return "intro/index";
     }
 
     @GetMapping(value = "/about")
     public String about() {
-        return "about";
+        return "intro/about";
     }
 
     @GetMapping(value = "/users")
     public String users() {
-        return "users";
+        return "intro/users";
     }
 
     /* @RequestMapping(value = "/user/{id:[\\d]+}/name/{name}", method = RequestMethod.GET)
