@@ -13,8 +13,12 @@
 </form>
 
 <div>
-    <p>First name:<span th:text="${firstName}"/></p>
-    <p>Last name:<span th:text="${lastName}"/></p>
+    <ul th:each="member:${members}">
+        <li>
+            <p>First name:<span th:text="${member.firstName}"/></p>
+            <p>Last name:<span th:text="${member.lastName}"/></p>
+        </li>
+    </ul>
 
 </div>
 </body>
