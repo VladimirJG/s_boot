@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class Intro {
-    @ResponseBody
+
     @RequestMapping(method = RequestMethod.GET)
     public String intoGet() {
-        return "Hello SpringBoot!";
+        return "intro";
     }
 }
