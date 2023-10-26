@@ -1,13 +1,16 @@
 package com.example.s_boot.members.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/members")
 public class MemberHandler {
     @GetMapping("")
-    public String toMembers() {
+    public String toMembers(Model model) {
+        model.addAttribute("firstName", "Jar");
+        model.addAttribute("lastName", "Trinity");
         return "members/members";
     }
 

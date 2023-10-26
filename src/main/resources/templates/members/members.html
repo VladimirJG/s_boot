@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Members</title>
@@ -11,5 +11,11 @@
            value="Add new Members"
            onclick='location.href="/members/new_member"'/>
 </form>
+
+<div>
+    <p>First name:<span th:text="${firstName}"/></p>
+    <p>Last name:<span th:text="${lastName}"/></p>
+
+</div>
 </body>
 </html>
