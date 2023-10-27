@@ -20,18 +20,18 @@ public class StudentsController {
         model.addAttribute("students", studentService.getAllStudents());
         return "students";
     }
-    @GetMapping("/student/new")
+    @GetMapping("/students/new")
     public String addStudent(Model model){
         Student student= new Student();
         model.addAttribute("student",student);
         return "new_student";
     }
-    @PostMapping("/student")
+    @PostMapping("/students")
     public String saveStudent(@ModelAttribute Student student){
         studentService.saveNewStudent(student);
         return "redirect:/students";
     }
-    @GetMapping("/student/delete/{id}")
+    @GetMapping("/students/delete/{id}")
     public String deleteStudent(@PathVariable Long id){
         studentService.deleteStudentById(id);
         return "redirect:/students";
